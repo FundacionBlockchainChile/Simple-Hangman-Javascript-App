@@ -1,6 +1,6 @@
 // Selectors
-const puzzleEl = document.querySelector("#word");
-const guessesEl = document.querySelector("#remain-guesses");
+const puzzleEl = document.querySelector("#puzzle");
+const guessesEl = document.querySelector("#guesses");
 const message = document.querySelector("#message");
 let game01
 
@@ -11,9 +11,15 @@ window.addEventListener("keypress", (e) => {
 });
 
 const render = () => {
-  puzzleEl.textContent = game01.puzzle;
+  puzzleEl.innerHTML = '';
   guessesEl.textContent = game01.statusMessage;
   message.textContent = "";
+
+  game01.puzzle.split('').forEach(letter => {
+    const letterEl = document.createElement('span')
+    letterEl.textContent = letter
+    puzzleEl.appendChild(letterEl)
+  });
 }
 
 const starGame = async () => {
