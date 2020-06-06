@@ -53,19 +53,6 @@
      transition: background .3s ease, color .3s ease;
 }
 
- .button:focus {
-    outline: none;
-}
-
  .button:hover {
      background: #5F3A87;
-}
-
-.centered {
-    /* display: flex; */
-     /* align-content: center; */
-     display: flex;
-     text-align: center;
-     flex-direction: column;
-     justify-content: center;
 }
